@@ -11,8 +11,8 @@ sudo dd if=boot-repair-disk-64bit.iso of=/dev/sdb bs=4M; sync
 
 
 # Restore sound settings
-/usr/bin/amixer set Master,0 80%,80% unmute
-/usr/bin/amixer set PCM,0 80%,80% unmute
-/usr/bin/amixer set Line,0 80%,80% mute captur
-/usr/bin/amixer set Capture,0 80%,80% captur
-/usr/bin/aplay /usr/share/system-config-soundcard/sound-sample.wav &
+/usr/bin/amixer set Master,0 100%,100% unmute
+/usr/bin/amixer set PCM,0 100%,100% unmute
+/usr/bin/amixer set Line,0 100%,100% mute captur
+/usr/bin/amixer set Capture,0 100%,100% captur
+/usr/bin/aplay /usr/share/sounds/purple/login.wav &
