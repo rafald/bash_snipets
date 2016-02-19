@@ -16,3 +16,12 @@ sudo dd if=boot-repair-disk-64bit.iso of=/dev/sdb bs=4M; sync
 /usr/bin/amixer set Line,0 100%,100% mute captur
 /usr/bin/amixer set Capture,0 100%,100% captur
 /usr/bin/aplay /usr/share/sounds/purple/login.wav &
+
+
+
+#echo "--yes-playlist --dump-intermediate-pages --write-pages --print-traffic --call-home --extract-audio --recode-video --embed-subs --embed-thumbnail --add-metadata --exec 'adb push {} /sdcard/Music/ && rm {}' --write-description --write-info-json --write-annotations "
+: ${PROXY:=--proxy=127.0.0.1:8123}
+: ${Q:=22}
+echo "--embed-subs --convert-subtitles=srt "
+youtube-dl ${PROXY} -t --restrict-filenames -c --sub-lang 'en,de,pl' --write-sub --write-auto-sub -f 'bestvideo[ext=mp4]+bestaudio[ext=m4a]' $@ --merge-output-format mp4
+
