@@ -27,3 +27,15 @@ sudo dd if=boot-repair-disk-64bit.iso of=/dev/sdb bs=4M; sync
 echo "--embed-subs --convert-subtitles=srt "
 youtube-dl ${PROXY} -t --restrict-filenames -c --sub-lang 'en,de,pl' --write-sub --write-auto-sub -f 'bestvideo[ext=mp4]+bestaudio[ext=m4a]' $@ --merge-output-format mp4
 
+
+# etraction extension of filename
+~% FILE="example.tar.gz"
+~% echo "${FILE%%.*}"
+example
+~% echo "${FILE%.*}"
+example.tar
+~% echo "${FILE#*.}"
+tar.gz
+~% echo "${FILE##*.}"
+gz
+
