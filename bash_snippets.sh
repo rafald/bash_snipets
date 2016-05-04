@@ -1,3 +1,7 @@
+# google translate shell
+gawk -f <(curl -Ls git.io/translate) -shell
+
+
 # instead less use vim to browse archives - works with zip archives not as less
 
 # change filesystem from readonly to writeable
