@@ -3,6 +3,14 @@
 gawk -f <(curl -Ls git.io/translate) -shell
 
 
+# Make sure only root can run our script
+if [ "$(id -u)" != "0" ]; then
+   echo "This script must be run as root" 1>&2
+   exit 1
+fi
+
+
+
 # instead less use vim to browse archives - works with zip archives not as less
 
 # change filesystem from readonly to writeable
