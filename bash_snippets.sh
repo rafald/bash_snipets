@@ -1,3 +1,6 @@
+# epoch - seconds from 1970 e.g. 1463825986
+date +%s
+
 # google translate shell
 # how to grab content from internet and feed it via a file
 gawk -f <(curl -Ls git.io/translate) -shell
