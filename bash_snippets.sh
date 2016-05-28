@@ -1,6 +1,7 @@
 # epoch - seconds from 1970 e.g. 1463825986
 date +%s
 
+http://www.tldp.org/LDP/abs/html/io-redirection.html
    [j]<>filename
       #  Open file "filename" for reading and writing,
       #+ and assign file descriptor "j" to it.
