@@ -1,6 +1,21 @@
 # epoch - seconds from 1970 e.g. 1463825986
 date +%s
 
+   [j]<>filename
+      #  Open file "filename" for reading and writing,
+      #+ and assign file descriptor "j" to it.
+      #  If "filename" does not exist, create it.
+      #  If file descriptor "j" is not specified, default to fd 0, stdin.
+      #
+      #  An application of this is writing at a specified place in a file. 
+      echo 1234567890 > File    # Write string to "File".
+      exec 3<> File             # Open "File" and assign fd 3 to it.
+      read -n 4 <&3             # Read only 4 characters.
+      echo -n . >&3             # Write a decimal point there.
+      exec 3>&-                 # Close fd 3.
+      cat File                  # ==> 1234.67890
+      #  Random access, by golly.
+
 # google translate shell
 # how to grab content from internet and feed it via a file
 gawk -f <(curl -Ls git.io/translate) -shell
