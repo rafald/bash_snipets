@@ -1,3 +1,9 @@
+#subtract numeric values
+FIRSTV=`ls -1 | wc -l`
+cd ..
+SECONDV=`ls -1 | wc -l`
+COUNT=expr $FIRSTV-$SECONDV
+
 # epoch - seconds from 1970 e.g. 1463825986
 date +%s
 
