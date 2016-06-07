@@ -1,3 +1,11 @@
+# copy file with I/.O errors
+dd if=corrupted-file.wmv of=corrupted-file-CLEAN.wmv conv=noerror,sync
+
+# block by block copy of corrupted hdd
+# Assuming your new-HDD (/dev/disk2) is of equal or greater size than your corrupt-HDD (/dev/disk1), then you can issue:
+dd if=/dev/disk1 of=/dev/disk2 bs=4096 conv=notrunc,noerror
+# blocksized @ 4k, don't truncate any data blocks, ignore all errors
+
 #subtract numeric values
 FIRSTV=`ls -1 | wc -l`
 cd ..
