@@ -11,6 +11,20 @@ FIRSTV=`ls -1 | wc -l`
 cd ..
 SECONDV=`ls -1 | wc -l`
 COUNT=$(($FIRSTV-$SECONDV))
+let "t = a<7?7:11"   # False
+#The let command can, in certain contexts, return a surprising exit status.
+# Evgeniy Ivanov points out:
+var=0
+echo $?     # 0
+            # As expected.
+let var++
+echo $?     # 1
+            # The command was successful, so why isn't $?=0 ???
+            # Anomaly!
+#  However, as Jeff Gorak points out,
+#+ this is part of the design spec for 'let' . . .
+# "If the last ARG evaluates to 0, let returns 1;
+#  let returns 0 otherwise." ['help let']
 
 # epoch - seconds from 1970 e.g. 1463825986
 date +%s
