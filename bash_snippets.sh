@@ -1,3 +1,6 @@
+# For find, you will need to test if any output was generated. -n tests for a non-empty string:
+if [[ -n $(find /var/log/crashes -name "app-*.log" -mmin -5) ]]
+
 # copy file with I/.O errors
 dd if=corrupted-file.wmv of=corrupted-file-CLEAN.wmv conv=noerror,sync
 
