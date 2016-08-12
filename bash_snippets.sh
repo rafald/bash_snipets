@@ -3,7 +3,8 @@ watch ls -l /proc/4182/fd
 watch ls -l /proc/$$/fd # for current bash script/shell
 
 # File operations performed by process started via strace
-strace -t -e trace=open,close,getdents,connect,accept,read ls / > /dev/null
+strace -f -t -e trace=open,close,getdents,connect,accept,read ~/fbig_files.sh / > /dev/null
+# note -f flag = trace forked children
 
 # For find, you will need to test if any output was generated. -n tests for a non-empty string:
 if [[ -n $(find /var/log/crashes -name "app-*.log" -mmin -5) ]]
