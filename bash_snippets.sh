@@ -1,3 +1,10 @@
+# Monitor files opened by process 4182
+watch ls -l /proc/4182/fd
+watch ls -l /proc/$$/fd # for current bash script/shell
+
+# File operations performed by process started via strace
+strace -t -e trace=open,close,getdents,connect,accept,read ls / > /dev/null
+
 # For find, you will need to test if any output was generated. -n tests for a non-empty string:
 if [[ -n $(find /var/log/crashes -name "app-*.log" -mmin -5) ]]
 
