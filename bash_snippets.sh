@@ -1,3 +1,12 @@
+{ # Prevent execution if this script was only partially downloaded
+oops() {
+    echo "$0:" "$@" >&2
+    exit 1
+}
+...
+
+} # End of wrapping
+
 # Monitor files opened by process 4182
 watch ls -l /proc/4182/fd
 watch ls -l /proc/$$/fd # for current bash script/shell
