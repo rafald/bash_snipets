@@ -1,3 +1,6 @@
+# had problem that CD/DVD drive changes /new disk loaded/ were not recognised by ubuntu, following helped
+eject -a on /dev/sr0 # or eject -a off /dev/sr0
+
 { # Prevent execution if this script was only partially downloaded
 oops() {
     echo "$0:" "$@" >&2
