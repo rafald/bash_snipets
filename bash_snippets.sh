@@ -1,3 +1,16 @@
+{ # Prevent execution if this script was only partially downloaded
+oops() {
+    echo "$0:" "$@" >&2
+    exit 1
+}
+tmpDir="$(mktemp -d -t nix-binary-tarball-unpack.XXXXXXXXXX || \
+          oops "Can\'t create temporary directory for downloading the Nix binary tarball")"
+cleanup() {
+    rm -rf "$tmpDir"
+}
+trap cleanup EXIT INT QUIT TERM
+
+
 # had problem that CD/DVD drive changes /new disk loaded/ were not recognised by ubuntu, following helped
 eject -a on /dev/sr0 # or eject -a off /dev/sr0
 
