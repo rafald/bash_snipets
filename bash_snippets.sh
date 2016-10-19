@@ -1,3 +1,8 @@
+Instalation script embeding jar archive
+#!/usr/bin/env sh
+exec java -jar  "$0" "$@"
+PK...binary content follows
+
 { # Prevent execution if this script was only partially downloaded
 oops() {
     echo "$0:" "$@" >&2
