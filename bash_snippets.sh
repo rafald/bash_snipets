@@ -1,3 +1,6 @@
+# on ubuntu how to display sys message on desktop
+notify-send -u critical -a bash "moj komunikat"
+
 Instalation script embeding jar archive
 #!/usr/bin/env sh
 exec java -jar  "$0" "$@"
