@@ -1,3 +1,6 @@
+# Column mode selection 
+# Shift-Alt and arrow keys NOTE Mouse does not worke
+
 # enable core dump on ubuntu 
 ulimit -c unlimited 
 ulimit -a 
@@ -12,7 +15,8 @@ apt-get install apport
 # test core dump
 sleep 10 &
 killall -SIGSEGV sleep
-
+# for procid in core file name
+sudo sysctl kernel.core_uses_pid=1
 
 # Shift-F12 toggles byobu key-bindings so you can execute for instance htop commands like kill (F9) from byobu session
 
