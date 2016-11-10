@@ -9,6 +9,9 @@ ulimit -a
 # dumps in /var/crash/
 apt-get install apport
 # https://wiki.ubuntu.com/DebuggingProgramCrash
+# test core dump
+sleep 10 &
+killall -SIGSEGV sleep
 
 
 # Shift-F12 toggles byobu key-bindings so you can execute for instance htop commands like kill (F9) from byobu session
