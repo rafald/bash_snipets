@@ -1,6 +1,11 @@
 # enable core dump onubuntu
 ulimit -c unlimited 
 ulimit -a 
+# depends on apport package if
+>> cat /proc/sys/kernel/core_pattern
+<< |/usr/libexec/abrt-hook-ccpp %s %c %p %u %g %t e
+apt-get install apport
+
 
 # Shift-F12 toggles byobu key-bindings so you can execute for instance htop commands like kill (F9) from byobu session
 
