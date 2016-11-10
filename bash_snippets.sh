@@ -4,6 +4,7 @@ ulimit -a
 # if global change required then change /etc/security/limits.conf 
 # If dump is handled by apport package 
 >> cat /proc/sys/kernel/core_pattern
+# or >> sysctl kernel.core_pattern
 << |/usr/libexec/abrt-hook-ccpp %s %c %p %u %g %t e
 # dumps in /var/crash/
 apt-get install apport
