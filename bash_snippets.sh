@@ -1,11 +1,13 @@
-# enable core dump on ubuntu
+# enable core dump on ubuntu 
 ulimit -c unlimited 
 ulimit -a 
-# depends on apport package if
+# if global change required then change /etc/security/limits.conf 
+# If dump is handled by apport package 
 >> cat /proc/sys/kernel/core_pattern
 << |/usr/libexec/abrt-hook-ccpp %s %c %p %u %g %t e
 # dumps in /var/crash/
 apt-get install apport
+# https://wiki.ubuntu.com/DebuggingProgramCrash
 
 
 # Shift-F12 toggles byobu key-bindings so you can execute for instance htop commands like kill (F9) from byobu session
