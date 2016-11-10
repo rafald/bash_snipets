@@ -1,9 +1,10 @@
-# enable core dump onubuntu
+# enable core dump on ubuntu
 ulimit -c unlimited 
 ulimit -a 
 # depends on apport package if
 >> cat /proc/sys/kernel/core_pattern
 << |/usr/libexec/abrt-hook-ccpp %s %c %p %u %g %t e
+# dumps in /var/crash/
 apt-get install apport
 
 
