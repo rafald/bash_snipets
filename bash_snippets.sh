@@ -14,7 +14,7 @@ apt-get install apport
 # https://wiki.ubuntu.com/DebuggingProgramCrash
 # test core dump
 sleep 10 &
-killall -SIGSEGV sleep
+killall -SIGSEGV %1
 # for procid in core file name
 sudo sysctl kernel.core_uses_pid=1
 
