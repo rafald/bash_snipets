@@ -1,3 +1,5 @@
+Shift-F12 toggle byobu key-bindings so you can execute for instance htop commands like kill (F9) from byobu session
+
 # on ubuntu how to display sys message on desktop
 notify-send -u critical -a bash "moj komunikat"
 
