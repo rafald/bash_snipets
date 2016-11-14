@@ -1,4 +1,7 @@
-# Column mode selection 
+# quick copy files with damaged sectors
+safecopy input output
+
+# Geany editor - Column mode selection 
 # Shift-Alt and arrow keys NOTE Mouse does not worke
 
 # enable core dump on ubuntu 
