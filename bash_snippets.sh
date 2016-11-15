@@ -1,4 +1,7 @@
-# quick copy files with damaged sectors
+# quickly create a file (for instance to pad disk space; or use /dev/full)
+dd if=/dev/zero of=${RANDOM}.dat bs=$(( 1024 * 1024 )) count=32
+
+# quickly copy files with damaged sectors
 safecopy input output
 
 # Geany editor - Column mode selection 
