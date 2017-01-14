@@ -1,3 +1,9 @@
+awk '$1 == "on", $1 == "off"'
+# prints multiline records starting with on line pattern and ending with off line pattern
+
+gawk '/^$/ {print L; L="";} {L=L $0 "\n";}' dups.lst
+# prints multiline records separated by empty line for dups.lst file
+
 # quickly create a file (for instance to pad disk space; or use /dev/full)
 dd if=/dev/zero of=${RANDOM}.dat bs=$(( 1024 * 1024 )) count=32
 
