@@ -1,3 +1,9 @@
+# sort multicharacted separated records, separator ist "\n\n"
+# replace newline \n with \0 character so we can use sort
+# watch for end record condition "\n\n" or empty line and emit "\n compressed" line
+# revert \n -> \0 translation at the end processing pipeline
+gawk '/^$/ {print L; L="";} {L=L $0 "\0";}' $@ | sort -n | tr '\0' '\n'
+
 awk '$1 == "on", $1 == "off"'
 # prints multiline records starting with on line pattern and ending with off line pattern
 
