@@ -1,3 +1,14 @@
+# dynamic queries for awk created in bash script - parametrized by SIZE variable
+QUERY="\$1>$SIZE"
+echo $QUERY
+split_multiline_records.sh $@ | awk $QUERY | sort -n | tr '\0' '\n'
+# ??? somehow $QUERY is not $1>45 but "$1>45"
+
+# help in bash scripts
+trap usage EXIT
+usage() { echo "usage:   $0 {lower bound of filtered records} {LIST of file names or - for STDIN}" 
+}
+
 # sort multicharacted separated records, separator ist "\n\n"
 # replace newline \n with \0 character so we can use sort
 # watch for end record condition "\n\n" or empty line and emit "\n compressed" line
