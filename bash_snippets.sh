@@ -5,8 +5,13 @@ split_multiline_records.sh $@ | awk $QUERY | sort -n | tr '\0' '\n'
 # ??? somehow $QUERY is not $1>45 but "$1>45"
 
 # help in bash scripts
-trap usage EXIT
-usage() { echo "usage:   $0 {lower bound of filtered records} {LIST of file names or - for STDIN}" 
+set -e
+set -o pipefail # $? == $pipestatus[-1], cmd1 exit code is in ${PIPESTATUS[0]}, cmd3 exit code in ${PIPESTATUS[2]} 
+trap usage EXIT SIGINT # SIGABRT  SIGINT  SIGQUIT SIGKILL SIGTRAP  SIGTERM 
+usage() {
+  if [[ $? != 0 ]] ; then
+     echo "USAGE:   $0 {lower bound for qualified records - number/size} {LIST of file names or - for STDIN}" i;
+  fi
 }
 
 # sort multicharacted separated records, separator ist "\n\n"
