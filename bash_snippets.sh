@@ -1,3 +1,10 @@
+# HERE tag in pipe, good for testing
+cat <<EOF | grep 'b' | tee b.txt
+foo
+bar
+baz
+EOF
+
 # dynamic queries for awk created in bash script - parametrized by SIZE variable
 QUERY="\$1>$SIZE"
 echo $QUERY
