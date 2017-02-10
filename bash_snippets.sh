@@ -1,5 +1,5 @@
-# test if zero args appes, usefull print usage or set input to stdin
-[ -z $@ ] || echo $#
+# test if zero args appes, usefull print usage or set input to default value stdin
+in="$1" ; [[ $# != 0 ]] || in="-"
 
 # HERE tag in pipe, good for testing
 cat <<EOF | grep 'b' | tee b.txt
