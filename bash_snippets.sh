@@ -1,3 +1,6 @@
+# test if zero args appes, usefull print usage or set input to stdin
+[ -z $@ ] || echo $#
+
 # HERE tag in pipe, good for testing
 cat <<EOF | grep 'b' | tee b.txt
 foo
