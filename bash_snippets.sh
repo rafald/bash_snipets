@@ -1,5 +1,7 @@
 # test if zero args appes, usefull print usage or set input to default value stdin,"$@" vs $@ makes difference ???
 [ -z "$@" ] && exit 1
+[ -z "$@" ] && usage
+IN="-" ; [ -z "$@" ] || IN="$1"
 # OR
 in="$1" ; [[ $# != 0 ]] || in="-"
 
