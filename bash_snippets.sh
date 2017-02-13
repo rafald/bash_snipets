@@ -1,3 +1,7 @@
+# read -n NUM characters into reply variable
+# -s supress echo while reading
+read -s -n 1 reply
+
 # test if zero args appes, usefull print usage or set input to default value stdin,"$@" vs $@ makes difference ???
 [ -z "$@" ] && exit 1
 [ -z "$@" ] && usage
