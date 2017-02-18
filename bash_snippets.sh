@@ -1,3 +1,8 @@
+# display date in particular language/locale
+locale
+sudo locale-gen pl_PL.UTF-8
+LC_TIME=pl_PL.UTF-8 date
+
 # read -n NUM characters into reply variable
 # -s supress echo while reading
 read -s -n 1 reply
