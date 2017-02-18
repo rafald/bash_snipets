@@ -2,6 +2,8 @@
 google_speech -l pl "Czesc $USER, teraz jest $(LC_TIME=pl_PL.UTF-8 date +'%T, %P %A %d %B %Y')"
 # robot greeting
 google_speech -l en "Hello, I am a stupid robot voice" -e speed 0.9 overdrive 10 echo 0.8 0.7 6 0.7 echo 0.8 0.7 10 0.7 echo 0.8 0.7 12 0.7 echo 0.8 0.88 12 0.7 echo 0.8 0.88 30 0.7 echo 0.6 0.6 60 0.7
+# stall alarm
+google_speech -l en stall -e delay 0.5 overdrive 20 repeat 5 speed 0.9 gain -5
 # Coundown
 for i in {10..0}; do ( google_speech -l pl $i & ); sleep 1s; done
 # Read Chuck Noris joke
