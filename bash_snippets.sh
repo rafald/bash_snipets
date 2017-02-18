@@ -1,3 +1,12 @@
+# greeting
+google_speech -l pl "Czesc $USER, teraz jest $(LC_TIME=pl_PL.UTF-8 date +'%T, %P %A %d %B %Y')"
+# robot greeting
+google_speech -l en "Hello, I am a stupid robot voice" -e speed 0.9 overdrive 10 echo 0.8 0.7 6 0.7 echo 0.8 0.7 10 0.7 echo 0.8 0.7 12 0.7 echo 0.8 0.88 12 0.7 echo 0.8 0.88 30 0.7 echo 0.6 0.6 60 0.7
+# Coundown
+for i in {10..0}; do ( google_speech -l pl $i & ); sleep 1s; done
+# Read Chuck Noris joke
+curl -s http://api.icndb.com/jokes/random/ | curl -s http://api.icndb.com/jokes/random/ | python3 -c 'import html.parser, json, sys;  print(html.parser.HTMLParser().unescape(json.load(sys.stdin)["value"]["joke"]))' | google_speech -' | google_speech -
+
 # Convert seconds since the epoch (1970-01-01 UTC) to a date
 date --date='@2147483647'
 
