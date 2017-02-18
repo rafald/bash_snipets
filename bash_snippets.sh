@@ -1,3 +1,6 @@
+# Convert seconds since the epoch (1970-01-01 UTC) to a date
+date --date='@2147483647'
+
 # display date in particular language/locale
 locale
 sudo locale-gen pl_PL.UTF-8
