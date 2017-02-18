@@ -1,5 +1,6 @@
 # greeting
-google_speech -l pl "Czesc $USER, teraz jest $(LC_TIME=pl_PL.UTF-8 date +'%T, %P %A %d %B %Y')"
+google_speech -l pl "Czesc $USER, teraz jest $(LC_TIME=pl_PL.UTF-8 date +'%T, %P %A %d %B %Y')" # online, no mp3 file
+gtts-cli.py -l pl "Dzien dobry" -o /tmp/1.mp3 ; mplayer  /tmp/1.mp3 # mp3 generated
 # robot greeting
 google_speech -l en "Hello, I am a stupid robot voice" -e speed 0.9 overdrive 10 echo 0.8 0.7 6 0.7 echo 0.8 0.7 10 0.7 echo 0.8 0.7 12 0.7 echo 0.8 0.88 12 0.7 echo 0.8 0.88 30 0.7 echo 0.6 0.6 60 0.7
 # stall alarm /causing the wing to lose its lift - stall/
