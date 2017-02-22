@@ -1,3 +1,6 @@
+# MORE_OPTS= is not reintialized to "--process-per-site --no-referrers "
+: ${MORE_OPTS:?"--process-per-site --no-referrers "}
+
 # default variable2 to variable1 if not present in command line
 variable1=$1
 variable2=${2:-$variable1}
