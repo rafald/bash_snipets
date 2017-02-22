@@ -5,8 +5,8 @@ do
     sleep 5
 done
 
-# MORE_OPTS= is not reintialized to "--process-per-site --no-referrers "
-: ${MORE_OPTS:?"--process-per-site --no-referrers "}
+# MORE_OPTS= is not reintialized to "--process-per-site --no-referrers " but undefined MORE_OPTS is initialized
+: ${MORE_OPTS="--process-per-site --no-referrers "}
 
 # default variable2 to variable1 if not present in command line
 variable1=$1
