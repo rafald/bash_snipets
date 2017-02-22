@@ -1,3 +1,10 @@
+# Waiting for myfile.txt to grow to 10000 lines
+until [ $lines -eq 10000 ]
+do
+    lines=`wc -l dates | awk '{print $1}'`
+    sleep 5
+done
+
 # MORE_OPTS= is not reintialized to "--process-per-site --no-referrers "
 : ${MORE_OPTS:?"--process-per-site --no-referrers "}
 
