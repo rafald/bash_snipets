@@ -1,3 +1,7 @@
+# default variable2 to variable1 if not present in command line
+variable1=$1
+variable2=${2:-$variable1}
+
 # greeting
 google_speech -l pl "Czesc $USER, teraz jest $(LC_TIME=pl_PL.UTF-8 date +'%T, %P %A %d %B %Y')" # online, no mp3 file
 gtts-cli.py -l pl "Dzien dobry" -o /tmp/1.mp3 ; mplayer  /tmp/1.mp3 # mp3 generated
